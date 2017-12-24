@@ -1,0 +1,84 @@
+  .glyphicon { margin-right:5px; }
+
+  .thumbnail
+  {
+      margin-bottom: 20px;
+      padding: 10px 10px 10px 10px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      border-radius: 10px;
+  }
+
+  .item
+  {
+    margin-right: -15px;
+  }
+
+  .list-group-image
+  {
+    width: 400px;
+    height:210px;
+  }
+
+  .item.list-group-item
+  {
+      float: none;
+      width: 100%;
+      background-color: #fff;
+      margin-bottom: 10px;
+      padding: 5px 5px 5px 5px;
+  }
+
+  .item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
+  {
+      background: #428bca;
+
+  }
+
+  .item.list-group-item .list-group-image
+  {
+      margin-right: 20px;
+
+  }
+
+  .item.list-group-item .list-group-image
+  {
+      margin-bottom: 0px;
+
+  }
+  .item.list-group-item .thumbnail
+  {
+      margin-bottom: 0px;
+  }
+  .item.list-group-item .caption
+  {
+    padding: 4px 4px 0px 4px;
+  }
+  .item.list-group-item:nth-of-type(odd)
+  {
+      background: #eeeeee;
+  }
+
+  .item.list-group-item:before, .item.list-group-item:after
+  {
+      display: table;
+      content: " ";
+  }
+
+  .item.list-group-item img
+  {
+      float: left;
+      width: 250px;
+      height: 170px;
+  }
+
+  .item.list-group-item:after
+  {
+      clear: both;
+  }
+
+  .list-group-item-text
+  {
+      margin: 0 0 11px;
+      float: left;
+  }

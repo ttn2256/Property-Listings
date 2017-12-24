@@ -1,0 +1,68 @@
+<!-- <div *ngIf="proplistings?.length == 0">
+  <p>NO NEW PROPERTY LISTING</p>
+</div> -->
+
+<div class="container">
+  <div class="well well-sm">
+    <div class="btn-group">
+       <a href="#" id="list" class="btn btn-primary btn-sm" (click)="isMapVisible = true"><span class="glyphicon glyphicon-th-list">
+       </span>List</a>
+       <a href="#" id="grid" class="btn btn-primary btn-sm" (click)="isMapVisible = true"><span class="glyphicon glyphicon-th">
+       </span>Grid</a>
+       <a href="#" id="btnmap" class="btn btn-primary btn-sm" (click)="isMapVisible = false"><span class="glyphicon glyphicon-map-marker">
+       </span>Map</a>
+    </div>
+  </div>
+  <div *ngIf="!isMapVisible" id ="map" class="map">
+    <agm-map #gm style="height: 600px" [latitude]="39.8282" [longitude]="-98.5795" [zoom]="4">
+      <agm-marker-cluster [minimumClusterSize]= "2" [maxZoom] = "10" [imagePath]="'https://googlemaps.github.io/js-marker-clusterer/images/m'">
+        <agm-marker *ngFor="let listing of proplistings | paginate: { itemsPerPage: 6, currentPage: page }"
+          [latitude]="listing.lat"
+          [longitude]="listing.long"
+          (mouseOver)="mouseOver(infoWindow,gm)">
+            <agm-info-window [disableAutoPan]="false" #infoWindow >
+              <div>
+                <img style="width: 150px" src="{{listing.path}}" />
+                <br>
+                <br>
+                <b><a [routerLink]="['/listing/'+listing.$key]">{{listing.title}}</a></b>
+                <br>
+                <b>Price:</b> {{listing.price}}
+                <br>
+                <b>Owner:</b> {{listing.owner}}
+                <br>
+                <b>Bedrooms:</b> {{listing.bedrooms}}
+              </div>
+            </agm-info-window>
+          </agm-marker>
+      </agm-marker-cluster>
+    </agm-map>
+    <br>
+  </div>
+
+  <div id="products" class="row list-group">
+
+    <div class="item col-xs-4 col-lg-4" *ngFor="let listing of proplistings | paginate: { itemsPerPage: 6, currentPage: page }">
+      <div class="thumbnail">
+        <img class="list-group-image" src="{{listing.path}}" />
+          <div class="row caption">
+            <h4><a class="inner list-group-item-heading" [routerLink]="['/listing/'+listing.$key]">{{listing.title}}</a></h4>
+              <p class="list-group-item-text" style="display: none">
+                <b>Address:</b> {{listing.city}}
+                <br>
+                <b>Price:</b> {{listing.price}}
+                <br>
+                <b>Owner:</b> {{listing.owner}}
+                <br>
+                <b>Bedrooms:</b> {{listing.bedrooms}}
+              </p>
+            </div>
+          </div>
+      </div>
+  </div>
+
+  <div id="page" class="pagination">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+
+</div>

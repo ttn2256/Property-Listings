@@ -1,0 +1,14 @@
+<div class="jumbotron text-center">
+  <div class="container">
+    <h2>Reset Password</h2>
+    <form (submit)="onReset()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" [(ngModel)]="email"
+        name="email">
+      </div>
+      <br>
+      <input type="submit" value="Reset password" class="btn btn-primary btn-block">
+    </form>
+  </div>
+</div>

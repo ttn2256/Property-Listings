@@ -1,0 +1,46 @@
+<a [routerLink]="['/listings']">Back</a>
+<br>
+<h2 class="page-header">Edit Listing</h2>
+
+<form ngNativeValidate (submit)="onEditSubmit()">
+  <div class="form-group">
+    <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+      <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+    </agm-map>
+  </div>
+  <div class="form-group">
+    <label>Title</label>
+    <input class="form-control" type="text" [(ngModel)]="title" name="title" required>
+  </div>
+  <div class="form-group">
+    <label>Address</label>
+      <input class="form-control" type="text" [(ngModel)]="city" name="city"  autocorrect="off" autocapitalize="off" spellcheck="off" #address required>
+  </div>
+  <div class="form-group">
+    <label>Owner</label>
+    <input class="form-control" type="text" [(ngModel)]="owner" name="owner" required>
+  </div>
+  <div class="form-group">
+    <label>Bedrooms</label>
+    <input class="form-control" type="number" [(ngModel)]="bedrooms" name="bedrooms" required>
+  </div>
+  <div class="form-group">
+    <label>Type</label>
+    <select class="form-control" type="text" [(ngModel)]="type" name="type" required>
+      <option value="Estate">Estate</option>
+      <option value="Condo">Condo</option>
+      <option value="Apartment">Apartment</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Image</label>
+    <input id="image" name="image" [(ngModel)]="image" type="file">
+    <br>
+    <img style="width: 200px" class="thumbnail" src="{{imageUrl}}">
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input class="form-control" type="text" [(ngModel)]="price" name="price" required>
+  </div>
+  <input type="submit" value="submit" class="btn btn-success">
+</form>

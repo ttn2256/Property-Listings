@@ -1,0 +1,38 @@
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1>Property listings</h1>
+    <p>Access the hottest properties avaiable</p>
+    <a (click) ="loginGoogle()"><img src="assets/img/google.png"></a>
+    <br>
+    <br>
+    <a (click) ="loginFacebook()"><img style="width:190px" src="assets/img/facebook.png"></a>
+    <br>
+    <br>
+    <a (click) ="loginTwitter()"><img style="width:200px" src="assets/img/twitter.png"></a>
+    <br>
+    <br>
+    <p> or Login using account</p>
+    <br>
+
+    <form (submit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" [(ngModel)]="email"
+        name="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" [(ngModel)]="password"
+        name="password">
+      </div>
+      <br>
+      <a style ="text-decoration: underline" [routerLink]="['/resetpass']">Forgot password?</a>
+      <br>
+      <br>
+      <input type="submit" value="Submit" class="btn btn-primary btn-block">
+    </form>
+    <br>
+    <a style ="text-decoration: underline" [routerLink]="['/register']">Create a new account</a>
+
+  </div>
+</div>
