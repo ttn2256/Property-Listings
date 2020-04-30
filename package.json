@@ -27,7 +27,7 @@
     "angularfire2": "^5.0.0-rc.3",
     "core-js": "^2.4.1",
     "firebase": "^4.6.1",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "js-marker-clusterer": "^1.0.0",
     "ngx-infinite-scroll": "^0.6.1",
     "ngx-pagination": "^3.0.3",
